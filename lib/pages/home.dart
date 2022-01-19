@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:grid_view_app/basic_grid_view_widget.dart';
+import 'package:grid_view_app/pages/basic_grid_view_widget.dart';
 import 'package:grid_view_app/constants/color_value.dart';
+import 'package:grid_view_app/pages/staggered_grid.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -133,7 +134,7 @@ class _GridHomeState extends State<GridHome> {
             flex: 8,
             child: Padding(
               padding: const EdgeInsets.only(top: 10,left: 5,right: 5),
-              child: _basicTabAcitve == true ? const BasicGridWidget() : null,
+              child: _basicTabAcitve == true ? const BasicGridWidget() : _dynamicTabAcitve == true ? const GridStaggered() : null,
             ),
           )
 
