@@ -1,6 +1,6 @@
 # grid_view_app
 
-A new Flutter application.
+<h2>practice purpose flutter application</h2>
 
 ## Getting Started
 
