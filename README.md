@@ -6,6 +6,48 @@
 
 This project is a starting point for a Flutter application.
 
+
+
+
+
+
+
+## Basic Grid View UI Image
+<img width="400" height = "600" src="https://raw.githubusercontent.com/Tareq23/Grid-View-App/master/images/basic%20grid%20view.PNG"/>
+
+```dart
+
+# GridView Widget 
+
+GridView.builder(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        mainAxisSpacing: 10,
+        crossAxisSpacing: 5,
+      ),
+      itemCount: _imgList.length,
+      itemBuilder: (BuildContext context, int index) {
+        return Container(
+          height: 100,
+          margin: EdgeInsets.zero,
+          color: Colors.greenAccent,
+          child: Image(
+            image: NetworkImage(_imgList[index]),
+            height: double.infinity,
+            width: double.infinity,
+            fit: BoxFit.cover,
+          ),
+        );
+      },
+
+    )
+
+```
+
+
+
+
+
 A few resources to get you started if this is your first Flutter project:
 
 - [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
