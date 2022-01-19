@@ -44,8 +44,40 @@ GridView.builder(
 
 ```
 
+## Staggered Grid View UI Image
+<img width="400" height = "600" src="https://raw.githubusercontent.com/Tareq23/Grid-View-App/master/images/straggered%20grid%20view.PNG"/>
 
+```dart
 
+# MasonryGridView Widget 
+
+MasonryGridView.count(
+      crossAxisCount: 2,
+      mainAxisSpacing: 10,
+      crossAxisSpacing: 5,
+      itemCount: _imgList.length,
+      itemBuilder: (context,index){
+        var _height = Random().nextInt(200) + 150;
+        return Card(
+          shadowColor: Colors.lightGreenAccent.withOpacity(0.7),
+          elevation: (Random().nextInt(20)+10).toDouble(),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15.0),
+
+          ),
+          child: Padding(
+            padding:  EdgeInsets.all(8.0),
+            child: Image(
+              image: NetworkImage(_imgList[index]),
+              height: _height.toDouble(),
+              fit: BoxFit.cover,
+            ),
+          ),
+        );
+      },
+    );
+
+```
 
 
 A few resources to get you started if this is your first Flutter project:
