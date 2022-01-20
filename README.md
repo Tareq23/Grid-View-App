@@ -80,6 +80,45 @@ MasonryGridView.count(
 ```
 
 
+## Sliver Grid View UI Image
+<img width="400" height = "600" src="https://raw.githubusercontent.com/Tareq23/Grid-View-App/master/images/sliver%20grid%20view.PNG"/>
+
+
+```dart
+
+# SliverGrid
+
+CustomScrollView(
+      slivers: [
+          SliverGrid(
+              delegate: SliverChildBuilderDelegate(
+                  (context,index){
+                    return ClipRRect(
+                      borderRadius: BorderRadius.circular(25),
+                        child: Image(
+                          image: NetworkImage(_imgList[index]),
+                          height: double.infinity,
+                          width: double.infinity,
+                          fit: BoxFit.cover,
+                        ),
+                    );
+                  },
+                childCount: _imgList.length,
+              ),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 3,
+                  crossAxisSpacing: 7,
+                mainAxisSpacing: 10,
+              ),
+          ),
+      ],
+    )
+
+```
+
+
+
+
 A few resources to get you started if this is your first Flutter project:
 
 - [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
